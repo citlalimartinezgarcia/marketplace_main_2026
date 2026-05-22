@@ -1,21 +1,41 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from .models import User
-from .models import Product
+from .models import User, Product
 
+
+# =========================
+# 👤 Registro
+# =========================
 class RegisterForm(UserCreationForm):
     email = forms.EmailField(required=True)
     is_seller = forms.BooleanField(required=False)
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'is_seller', 'password1', 'password2')
+        fields = (
+            'username',
+            'email',
+            'is_seller',
+            'password1',
+            'password2'
+        )
 
 
+# =========================
+# 📦 Producto
+# =========================
 class ProductForm(forms.ModelForm):
+
     class Meta:
         model = Product
-        fields = ['name', 'description', 'price', 'stock', 'categories', 'image']
+        fields = [
+            'name',
+            'description',
+            'price',
+            'stock',
+            'categories'
+        ]
+
         widgets = {
             'categories': forms.CheckboxSelectMultiple()
         }

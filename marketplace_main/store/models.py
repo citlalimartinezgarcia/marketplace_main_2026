@@ -141,3 +141,4 @@ class CartItem(models.Model):
 
     def __str__(self):
         return f"{self.product} x {self.quantity}"
+    image = models.ImageField(upload_to='products/', blank=True, null=True)
