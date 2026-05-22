@@ -10,6 +10,9 @@ urlpatterns = [
     # Dashboard
     path('dashboard/', views.dashboard, name='dashboard'),
 
+    # Productos PUBLICOS
+    path('products/', views.product_list, name='product_list'),
+
     # Productos CRUD
     path('products/create/', views.product_create, name='product_create'),
     path('products/<uuid:pk>/edit/', views.product_update, name='product_update'),

@@ -1,7 +1,3 @@
-"""
-Django settings for marketplace_main project.
-"""
-
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -36,11 +32,11 @@ AUTH_USER_MODEL = 'store.User'
 
 ROOT_URLCONF = 'marketplace_main.urls'
 
-# ✅ AQUÍ ESTÁ LA CORRECCIÓN IMPORTANTE
+# 🔥 FIX REAL (TU CASO EXACTO)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],  # 👈 IMPORTANTE (ANTES ESTABA VACÍO)
+        'DIRS': [BASE_DIR / "marketplace_main" / "templates"],  # 👈 CLAVE
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,7 +71,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# ✅ IMPORTANTE PARA IMÁGENES (ya tienes carrito/productos)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 

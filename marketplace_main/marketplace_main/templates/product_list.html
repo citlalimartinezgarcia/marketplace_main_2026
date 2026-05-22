@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Productos</title>
+</head>
+<body>
+
+<h1>Productos</h1>
+
+{% for product in products %}
+
+    <div>
+
+        <h2>{{ product.name }}</h2>
+
+        <p>Precio: ${{ product.price }}</p>
+
+        <p>Stock: {{ product.stock }}</p>
+
+        <a href="{% url 'add_to_cart' product.id %}">
+            Agregar al carrito
+        </a>
+
+    </div>
+
+    <hr>
+
+{% empty %}
+
+    <p>No hay productos.</p>
+
+{% endfor %}
+
+</body>
+</html>
